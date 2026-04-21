@@ -1,9 +1,26 @@
 <?php
 
-require_once __DIR__ .'/../../config/database.php';
+namespace monolitico\models\entities;
+use monolitico\models\config\ModelBase;
 
 class Reserva{
-    private $conn;
+    protected $id =0;
+    protected $idcliente = null;
+    protected $idVehiculo = null;
+    protected $inicio = null;
+    protected $fin = null;
+    protected $estado = null;
+
+    public function __construct($id, $idcliente, $idVehiculo, $inicio, $fin, $estado)
+    {
+      $this->id = $id;
+      $this->idcliente = $idcliente;
+      $this->idVehiculo = $idVehiculo;
+      $this->inicio = $inicio;
+      $this->fin = $fin;
+      $this->estado = $estado;
+    }
+    /*private $conn;
     public function __construct()
     {
         $this->conn = Database::getInstance()->getConnection();
@@ -65,5 +82,5 @@ class Reserva{
         );
         $stmt->bind_param("i",$id);
         return $stmt->execute();
-    }
+    }*/
 }

@@ -1,8 +1,45 @@
 <?php
-// Este archivo maneja la conexión a la base de datos
-// Usamos el patrón Singleton: una sola conexión para toda la app
+namespace monolitico\models\config;
 
-class Database {
+use mysqli;
+
+class Conexion {
+    private $conn;
+
+    public function __construct() {
+        $this->conn = new mysqli(
+            'localhost',
+            'root',
+            '',
+            'alquiler_vehiculos_db'
+        );
+
+        if ($this->conn->connect_error) {
+            die("Error de conexión: " . $this->conn->connect_error);
+        }
+
+        $this->conn->set_charset("utf8");
+    }
+
+    // Para consultas SELECT
+    public function execute($sql) {
+        return $this->conn->query($sql);
+    }
+
+    // Para INSERT, UPDATE, DELETE con parámetros
+    public function executeUpdateData($sql, $params) {
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param($params['type'], ...$params['datos']);
+        $stmt->execute();
+        return $stmt;
+    }
+
+    // Cierra la conexión
+    public function close() {
+        $this->conn->close();
+    }
+}
+/*class Database {
     private static $instance = null;
     private $conn;
 
@@ -39,4 +76,4 @@ class Database {
     public function getConnection() {
         return $this->conn;
     }
-}
+}*/
