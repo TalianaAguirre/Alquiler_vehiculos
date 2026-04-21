@@ -2,6 +2,7 @@
 namespace monolitico\controllers;
 use monolitico\models\queries\ReservaQuery;
 use monolitico\models\entities\Reserva;
+use monolitico\models\queries\VehiculoQuery;
 
 class ReservaController{
     //trae todos los reservas
@@ -30,9 +31,13 @@ class ReservaController{
             $datos['vehiculo_id'],
             $datos['inicio'],
             $datos['fin'],
-            $datos['estado']
+            'activa'
         );
-        return ReservaQuery::create($reserva);
+        $resultado = ReservaQuery::create($reserva);
+        if($resultado){
+            VehiculoQuery::updateEstado($datos['vehiculo_id'], 'alquilado');
+        }
+        return $resultado;
     }
 
     //cambia el estado
