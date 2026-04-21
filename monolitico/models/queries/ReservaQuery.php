@@ -83,7 +83,7 @@ class ReservaQuery {
         return $result;
     }
 
-    static function Estado($id, $estado) {
+    static function updateEstado($id, $estado) {
         $sql = "UPDATE reservas SET estado = ? WHERE id = ?";
         $connDb = new Conexion();
         $result = $connDb->executeUpdateData($sql, [
