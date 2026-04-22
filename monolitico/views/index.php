@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Gestor de Alquiler</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="views/css/style.css">
 </head>
 <body>
 
@@ -18,7 +18,7 @@
     </div>
 
     <div class="grid-acciones">
-        <a href="registro_vehiculos.php" class="tarjeta">
+        <a href="views/registro_vehiculos.php" class="tarjeta">
             <div class="icono">🚗</div>
             <h3>Registrar Vehículo</h3>
             <p>carros a flota disponible.</p>
