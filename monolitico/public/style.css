@@ -23,9 +23,7 @@ body {
     gap: 15px;
 }
 
-.icono-carro {
-    font-size: 2.5rem;
-}
+
 
 .header-principal h1 {
     margin: 0;
@@ -77,7 +75,7 @@ body {
     border-top: 5px solid #1abc9c;
 }
 
-.tarjeta .icono {
+.tarjeta.icono {
     font-size: 3rem;
     margin-bottom: 15px;
 }
