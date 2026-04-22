@@ -7,8 +7,8 @@
 </head>
 <body>
 
-    <?php include 'includes/header.php'; ?>
-    <?php include 'includes/menu.php'; ?>
+    <?php include 'views/includes/header.php'; ?>
+    <?php include 'views/includes/menu.php'; ?>
 
     <main class="contenedor">
         <main class="contenedor">
@@ -38,6 +38,6 @@
     </div>
 </main>
     </main>
-<?php include 'includes/footer.php'; ?>
+<?php include 'views/includes/footer.php'; ?>
 </body>
 </html>
