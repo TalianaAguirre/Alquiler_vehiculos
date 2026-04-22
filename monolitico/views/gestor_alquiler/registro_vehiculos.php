@@ -45,11 +45,7 @@ $lista      = $controller->getLista();
                     <td><?= $v->get('modelo') ?></td>
                     <td><?= $v->get('anio') ?></td>
                     <td><?= $v->get('categoria') ?></td>
-                    <td>
-                        <span class="badge badge-<?= $v->get('estado') ?>">
-                            <?= ucfirst($v->get('estado')) ?>
-                        </span>
-                    </td>
+                    <td><?= $v->get('estado') ?></td>
                     <td class="td-acciones">
                         <a href="eliminar_vehiculo.php?id=<?= $v->get('id') ?>"
                            onclick="return confirm('¿Eliminar este vehículo?')">Eliminar</a>
