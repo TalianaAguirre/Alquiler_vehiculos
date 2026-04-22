@@ -13,7 +13,7 @@ $lista      = $controller->getLista();
 <head>
     <meta charset="UTF-8">
     <title>Vehículos</title>
-    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="page-container">
