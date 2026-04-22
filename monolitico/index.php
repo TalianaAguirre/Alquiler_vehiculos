@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-include 'views/gestor_alquiler/index.php';
+include 'views/index.php';
 ?>
 </body>
 </html>
