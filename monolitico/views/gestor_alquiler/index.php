@@ -18,7 +18,7 @@
     </div>
 
     <div class="grid-acciones">
-        <a href="registro_vehiculos.php" class="tarjeta">
+        <a href="registro_" class="tarjeta">
             <div class="icono">🚗</div>
             <h3>Registrar Vehículo</h3>
             <p>carros a flota disponible.</p>
