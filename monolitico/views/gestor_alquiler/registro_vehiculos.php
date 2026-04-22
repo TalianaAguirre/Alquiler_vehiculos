@@ -4,7 +4,7 @@ require __DIR__ . '/../models/entities/vehiculo.php';
 require __DIR__ . '/../models/config/Conexion.php';
 require __DIR__ . '/../models/queries/VehiculoQuery.php';
 require __DIR__ . '/../controllers/VehiculoController.php';
-use app\controllers\VehiculoController;
+use monolitico\controllers\VehiculoController;
 $controller = new VehiculoController();
 $lista      = $controller->getLista();
 ?>

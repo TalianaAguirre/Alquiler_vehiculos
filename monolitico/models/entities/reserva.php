@@ -3,7 +3,7 @@
 namespace monolitico\models\entities;
 use monolitico\models\config\ModelBase;
 
-class Reserva{
+class Reserva extends ModelBase{
     protected $id =0;
     protected $idcliente = null;
     protected $idVehiculo = null;

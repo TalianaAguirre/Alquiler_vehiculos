@@ -85,7 +85,7 @@ class VehiculoQuery {
     }
 
     // Cambia el estado del vehículo
-    static function Estado($id, $estado) {
+    static function updateEstado($id, $estado) {
         $sql    = "UPDATE vehiculos SET estado = ? WHERE id = ?";
         $connDb = new Conexion();
         $result = $connDb->executeUpdateData($sql, [

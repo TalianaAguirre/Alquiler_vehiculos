@@ -16,8 +16,8 @@ class ReservaQuery {
                 $row['id'],
                 $row['cliente_id'],
                 $row['vehiculo_id'],
-                $row['inicio'],
-                $row['fin'], 
+                $row['fecha_inicio'],
+                $row['fecha_fin'], 
                 $row['estado']
             );
         }
@@ -26,7 +26,7 @@ class ReservaQuery {
     }
 
     static function getActivas() {
-        $sql = "SELECT * FROM reservas WHERE estado = 'activas'";
+        $sql = "SELECT * FROM reservas WHERE estado = 'activa'";
         $connDb = new Conexion();
         $result = $connDb->execute($sql);
         $list = [];
@@ -35,8 +35,8 @@ class ReservaQuery {
                 $row['id'],
                 $row['cliente_id'],
                 $row['vehiculo_id'],
-                $row['inicio'],
-                $row['fin'], 
+                $row['fecha_inicio'],
+                $row['fecha_fin'], 
                 $row['estado']
             );
         }
@@ -55,8 +55,8 @@ class ReservaQuery {
                 $row['id'],
                 $row['cliente_id'],
                 $row['vehiculo_id'],
-                $row['inicio'],
-                $row['fin'], 
+                $row['fecha_inicio'],
+                $row['fecha_fin'], 
                 $row['estado']
             );
         }
@@ -66,7 +66,7 @@ class ReservaQuery {
 
     // Crea un vehículo nuevo
     static function create($entity) {
-        $sql = "INSERT INTO reservas (cliente_id, vehiculo_id, inicio, fin, estado) 
+        $sql = "INSERT INTO reservas (cliente_id, vehiculo_id, fecha_inicio, fin, estado) 
                 VALUES (?,?,?,?,?)";
         $connDb = new Conexion();
         $result = $connDb->executeUpdateData($sql, [
@@ -74,8 +74,8 @@ class ReservaQuery {
             'datos' => [
                 $entity->cliente_id,
                 $entity->vehiculo_id,
-                $entity->inicio,
-                $entity->fin,
+                $entity->fecha_inicio,
+                $entity->fecha_fin,
                 $entity->estado
             ]
         ]);
@@ -105,15 +105,15 @@ class ReservaQuery {
         return $result;
     }
 
-    static function hayConflicto($vehiculo_id, $inicio, $fin){
+    static function hayConflicto($vehiculo_id, $fecha_inicio, $fecha_fin){
         $sql = "SELECT * FROM reservas
                 WHERE vehiculo_id = ?
                 AND estado = 'activa'
-                AND (inicio <= ? AND fin >= ?)";
+                AND (fecha_inicio <= ? AND fecha_fin >= ?)";
         $connDb = new Conexion();
         $result = $connDb ->executeUpdateData($sql, [
             'type' => 'iss',
-            'datos' => [$vehiculo_id, $fin, $inicio]
+            'datos' => [$vehiculo_id, $fecha_fin, $fecha_inicio]
         ]);
         $connDb->close();
         return $result->num_rows > 0;
