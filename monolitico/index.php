@@ -7,13 +7,18 @@
 </head>
 <body>
 
-    <?php include 'views/includes/header.php'; ?>
-    <?php include 'views/includes/menu.php'; ?>
+<header class="header-principal">
+    <div class="logo-contenedor">
+        <span class="icono-carro">🚗</span>
+        <h1>Gestor de Alquiler de Vehículos</h1>
+    </div>
+    <p class="subtitulo">Administración de disponibilidad y reservas</p>
+</header>
 
     <main class="contenedor">
         <main class="contenedor">
     <div class="bienvenida">
-        <h2>Bienvenida 👋</h2>
+        <h2>Bienvenida </h2>
         <p>¿Qué deseas gestionar hoy?</p>
     </div>
 
@@ -38,6 +43,11 @@
     </div>
 </main>
     </main>
-<?php include 'views/includes/footer.php'; ?>
+<footer class="footer-principal">
+    <div class="contenido-footer">
+        <p>&copy; 2026 - Gestor de Alquiler de Vehículos</p>
+        <p>Salome Aguirre|  Universidad de Boyaca</p>
+    </div>
+</footer>
 </body>
 </html>
