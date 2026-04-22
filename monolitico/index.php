@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Gestor de Alquiler</title>
-    <link rel="stylesheet" href="views/css/style.css">
+    <link rel="stylesheet" href="public/style.css">
 </head>
 <body>
 

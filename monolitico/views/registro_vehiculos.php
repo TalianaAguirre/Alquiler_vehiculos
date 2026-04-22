@@ -13,7 +13,7 @@ $lista      = $controller->getLista();
 <head>
     <meta charset="UTF-8">
     <title>Vehículos</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../public/style.css">
 </head>
 <body>
     <div class="page-container">
@@ -22,7 +22,7 @@ $lista      = $controller->getLista();
         </div>
 
         <div class="acciones">
-            <a href="crear_vehiculo.php" class="btn">Registrar vehículo</a>
+            <a href="CrearVehiculo.php" class="btn">Registrar vehículo</a>
         </div>
 
         <table class="tabla">
