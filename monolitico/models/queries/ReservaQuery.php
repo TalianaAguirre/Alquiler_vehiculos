@@ -66,7 +66,7 @@ class ReservaQuery {
 
     // Crea un vehículo nuevo
     static function create($entity) {
-        $sql = "INSERT INTO reservas (cliente_id, vehiculo_id, fecha_inicio, fin, estado) 
+        $sql = "INSERT INTO reservas (cliente_id, vehiculo_id, fecha_inicio, fecha_fin, estado) 
                 VALUES (?,?,?,?,?)";
         $connDb = new Conexion();
         $result = $connDb->executeUpdateData($sql, [
