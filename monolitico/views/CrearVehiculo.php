@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_POST['estado'] = 'disponible';
     $controller = new VehiculoController();
     $controller->registrar($_POST);
-    header('Location: vehiculos.php?msg=creado');
+    header('Location: registro_vehiculos.php?msg=creado');
     exit;
 }
 ?>
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label>Categoría
                 <input type="text" name="categoria">
             </label>
-            <a href="registro_vehiculos.php" class="btn-volver">Registrar</a>
+            <button type="submit" class="btn">Registrar</button>
         </form>
 
     </div>

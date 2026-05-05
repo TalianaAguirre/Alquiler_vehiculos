@@ -34,6 +34,7 @@ class Conexion {
         return $stmt;
     }
 
+    
     // Cierra la conexión
     public function close() {
         $this->conn->close();

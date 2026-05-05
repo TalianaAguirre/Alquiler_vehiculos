@@ -7,6 +7,7 @@ require __DIR__ . '/../controllers/VehiculoController.php';
 use monolitico\controllers\VehiculoController;
 $controller = new VehiculoController();
 $lista      = $controller->getLista();
+$mensaje = $_GET['msg'] ?? null;
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -20,6 +21,14 @@ $lista      = $controller->getLista();
         <div class="page-header">
             <h1>Vehículos</h1>
         </div>
+
+        <?php if ($mensaje === 'creado'): ?>
+            <p class="msg-exito">Vehículo registrado correctamente.</p>
+        <?php elseif ($mensaje === 'eliminado'): ?>
+            <p class="msg-exito">Vehículo eliminado correctamente.</p>
+        <?php elseif ($mensaje === 'error_reservas'): ?>
+            <p class="msg-error">No se puede eliminar: el vehículo tiene reservas activas.</p>
+        <?php endif; ?>
 
         <div class="acciones">
             <a href="CrearVehiculo.php" class="btn">Registrar vehículo</a>
@@ -40,15 +49,15 @@ $lista      = $controller->getLista();
             <tbody>
                 <?php foreach ($lista as $v): ?>
                 <tr>
-                    <td><?= $v->get('id') ?></td>
-                    <td><?= $v->get('marca') ?></td>
-                    <td><?= $v->get('modelo') ?></td>
-                    <td><?= $v->get('anio') ?></td>
-                    <td><?= $v->get('categoria') ?></td>
-                    <td><?= $v->get('estado') ?></td>
+                    <td><?= $v->id ?></td>
+                    <td><?= $v->marca ?></td>
+                    <td><?= $v->modelo ?></td>
+                    <td><?= $v->anio ?></td>
+                    <td><?= $v->categoria ?></td>
+                    <td><?= $v->estado ?></td>
                     <td class="td-acciones">
-                        <a href="eliminar_vehiculo.php?id=<?= $v->get('id') ?>"
-                           onclick="return confirm('¿Eliminar este vehículo?')">Eliminar</a>
+                        <a href="EliminarVehiculo.php?id=<?= $v->id ?>"
+                           onclick="return confirm('¿Desea eliminar este vehículo?')">Eliminar</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
