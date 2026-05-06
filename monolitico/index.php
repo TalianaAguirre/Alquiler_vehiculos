@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<header class="header-principal">
+<header class="header">
     <div class="logo-contenedor">
         
         <h1>Gestor de Alquiler de Vehículos</h1>
@@ -15,53 +15,53 @@
     <p class="subtitulo">Administración de disponibilidad y reservas</p>
 </header>
 
-    <main class="contenedor">
-        <main class="contenedor">
+<main class="contenedor">
+       
     <div class="bienvenida">
-        <h2>Bienvenida </h2>
+        <h2>Te doy la bienvenida </h2>
         <p>¿Qué deseas gestionar hoy?</p>
     </div>
 
     <div class="grid-acciones">
         <a href="monolitico\views\registro_vehiculos.php" class="tarjeta">
             <div class="icono">
-                <img src="public\recursos\carro.png" alt="icono de vehìculo">
+                <img src="public\recursos\car.png" alt="icono de vehìculo">
             </div>
             
             <h3>Registrar Vehículo</h3>
-            <p>Ingrese un nuevo vehículo</p>
+            <p>Ingresa un nuevo vehículo</p>
         </a>
 
         <a href="monolitico\views\registr_clientes.php" class="tarjeta">
             <div class="icono"> 
-                <img src="public\recursos\cliente.png" alt="icono de cliente">
+                <img src="public\recursos\clien.png" alt="icono de cliente">
             </div>
             <h3>Registrar cliente </h3>
-            <p> Ingrese  un  nuevo cliente</p>
+            <p> Ingresa un  nuevo cliente</p>
         </a>
 
         <a href="monolitico\views\registro_reservas.php" class="tarjeta">
             <div class="icono">
-                <img src="public\recursos\bell.png" alt="icono de reserva">
+                <img src="public\recursos\reser.png" alt="icono de reserva">
             </div>
             <h3>Crear Reserva</h3>
-            <p>Ingrese una nueva reserva</p>
+            <p>Ingresa una nueva reserva</p>
         </a>
 
         <a href="monolitico\views\Historial.php" class="tarjeta">
             <div class="icono">
-                <img src="public\recursos\lupa.png" alt="icono de lupa">
+                <img src="public\recursos\lup.png" alt="icono de lupa">
             </div>
             <h3>Realizar consulta</h3>
-            <p>Consulte en el inventario</p>
+            <p>Consulta en el inventario</p>
         </a>
     </div>
 </main>
-    </main>
-<footer class="footer-principal">
+<footer class="footer">
     <div class="contenido-footer">
-        <p>&copy; 2026 - Gestor de Alquiler de Vehículos</p>
-        <p><br>Salome Aguirre <br>Valeria Sandoval|  Universidad de Boyaca</p>
+        <p> 2026 - Gestor de Alquiler de Vehículos</p>
+        <p><br>Valeria Sandoval | Salome Aguirre</p>
+        <p> Universidad de Boyaca</p>
     </div>
 </footer>
 </body>
