@@ -23,37 +23,37 @@
     </div>
 
     <div class="grid-acciones">
-        <a href="views/registro_vehiculos.php" class="tarjeta">
+        <a href="monolitico\views\registro_vehiculos.php" class="tarjeta">
             <div class="icono">
-                <img src="public/recursos/carro.jpg" alt="icono de vehìculo">
+                <img src="public\recursos\carro.png" alt="icono de vehìculo">
             </div>
             
             <h3>Registrar Vehículo</h3>
-            <p>carros a flota disponible.</p>
+            <p>Ingrese un nuevo vehículo</p>
         </a>
 
-        <a href="inventario.php" class="tarjeta">
+        <a href="monolitico\views\registr_clientes.php" class="tarjeta">
             <div class="icono"> 
-                <img src="public/recursos/usuario.jpg" alt="icono de cliente">
+                <img src="public\recursos\cliente.png" alt="icono de cliente">
             </div>
-            <h3>Registrar cliente nuevo</h3>
-            <p> Lista de clientes</p>
+            <h3>Registrar cliente </h3>
+            <p> Ingrese  un  nuevo cliente</p>
         </a>
 
-        <a href="reservas.php" class="tarjeta">
+        <a href="monolitico\views\registro_reservas.php" class="tarjeta">
             <div class="icono">
-                <img src="public/recursos/bell.jpg" alt="icono de reserva">
+                <img src="public\recursos\bell.png" alt="icono de reserva">
             </div>
-            <h3>Gestionar Reservas</h3>
-            <p>Revisar alquiler de vehiulos.</p>
+            <h3>Crear Reserva</h3>
+            <p>Ingrese una nueva reserva</p>
         </a>
 
-        <a href="reservas.php" class="tarjeta">
+        <a href="monolitico\views\Historial.php" class="tarjeta">
             <div class="icono">
-                <img src="public/recursos/lupa.jpg" alt="icono de lupa">
+                <img src="public\recursos\lupa.png" alt="icono de lupa">
             </div>
-            <h3>Gestionar Reservas</h3>
-            <p>Revisar alquiler de vehiulos.</p>
+            <h3>Realizar consulta</h3>
+            <p>Consulte en el inventario</p>
         </a>
     </div>
 </main>
