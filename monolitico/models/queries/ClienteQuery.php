@@ -16,7 +16,7 @@ class ClienteQuery {
                 $row['nombre'],
                 $row['telefono'],
                 $row['correo'],
-                $row['num_licencia']
+                $row['numero_licencia'] 
             );
         }
         $connDb->close();
@@ -34,7 +34,7 @@ class ClienteQuery {
                 $row['nombre'],
                 $row['telefono'],
                 $row['correo'],
-                $row['num_licencia']
+                $row['numero_licencia'] 
             );
         }
         $connDb->close();
@@ -52,7 +52,7 @@ class ClienteQuery {
                 $row['nombre'],
                 $row['telefono'],
                 $row['correo'],
-                $row['num_licencia']
+                $row['numero_licencia'] 
             );
         }
         $connDb->close();
@@ -66,10 +66,10 @@ class ClienteQuery {
         $result = $connDb->executeUpdateData($sql, [
             'type'  => 'ssss',
             'datos' => [
-                $entity->nombre,
-                $entity->telefono,
-                $entity->correo,
-                $entity->num_licencia
+                $entity->get('nombre'),
+                $entity->get('telefono'),
+                $entity->get('correo'),
+                $entity->get('numero_licencia')
             ]
         ]);
         $connDb->close();

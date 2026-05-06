@@ -29,8 +29,8 @@ class ReservaController{
             0,
             $datos['cliente_id'],
             $datos['vehiculo_id'],
-            $datos['inicio'],
-            $datos['fin'],
+            $datos['fecha_inicio'],
+            $datos['fecha_fin'],
             'activa'
         );
         $resultado = ReservaQuery::create($reserva);
@@ -53,6 +53,26 @@ class ReservaController{
     //varefica si un vehiculo ya tiene reserva en esas fechas
     public function hayConflicto($vehiculo_id, $inicio, $fin){
         return ReservaQuery::hayConflicto($vehiculo_id, $inicio, $fin);
+    }
+
+    public function completar($id, $vehiculo_id) {
+        $resultado = ReservaQuery::updateEstado($id, 'completada');
+        if ($resultado) {
+            VehiculoQuery::updateEstado($vehiculo_id, 'disponible');
+        }
+        return $resultado;
+    }
+
+    public function cancelar($id, $vehiculo_id) {
+        $resultado = ReservaQuery::updateEstado($id, 'cancelada');
+        if ($resultado) {
+            VehiculoQuery::updateEstado($vehiculo_id, 'disponible');
+        }
+        return $resultado;
+    }
+
+    public function getHistorial($filtro = null) {
+        return ReservaQuery::getHistorial($filtro);
     }
 
 }

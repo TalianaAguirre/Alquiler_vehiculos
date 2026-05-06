@@ -21,7 +21,6 @@ $mensaje    = $_GET['msg'] ?? null;
 </head>
 <body class="inner-page">
     <div class="app-layout">
-        <?php require __DIR__ . '/includes/menu.php'; ?>
         <main class="content">
             <div class="content-header">
                 <h1 class="content-title">Clientes</h1>
@@ -65,5 +64,7 @@ $mensaje    = $_GET['msg'] ?? null;
             </table>
         </main>
     </div>
+     <a href="../index.php" class="btn-volver">Volver al menu</a>
+
 </body>
 </html>
