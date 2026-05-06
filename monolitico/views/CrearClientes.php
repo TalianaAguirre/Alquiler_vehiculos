@@ -23,7 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body class="inner-page">
     <div class="app-layout">
-        <?php require __DIR__ . '/includes/menu.php'; ?>
         <main class="content">
             <div class="content-header">
                 <h1 class="content-title">Registrar Cliente</h1>
@@ -49,5 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
         </main>
     </div>
+     <a href="../index.php" class="btn-volver">Volver al menu</a>
+
 </body>
 </html>

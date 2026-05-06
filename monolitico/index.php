@@ -23,7 +23,7 @@
     </div>
 
     <div class="grid-acciones">
-        <a href="monolitico\views\registro_vehiculos.php" class="tarjeta">
+        <a href="/Alquiler_vehiculos/monolitico/views/registro_vehiculos.php" class="tarjeta">
             <div class="icono">
                 <img src="public\recursos\carro.png" alt="icono de vehìculo">
             </div>
@@ -32,7 +32,7 @@
             <p>Ingrese un nuevo vehículo</p>
         </a>
 
-        <a href="monolitico\views\registr_clientes.php" class="tarjeta">
+        <a href="/Alquiler_vehiculos/monolitico/views/registr_clientes.php" class="tarjeta">
             <div class="icono"> 
                 <img src="public\recursos\cliente.png" alt="icono de cliente">
             </div>
@@ -40,7 +40,7 @@
             <p> Ingrese  un  nuevo cliente</p>
         </a>
 
-        <a href="monolitico\views\registro_reservas.php" class="tarjeta">
+        <a href="/Alquiler_vehiculos/monolitico/views/registro_reservas.php" class="tarjeta">
             <div class="icono">
                 <img src="public\recursos\bell.png" alt="icono de reserva">
             </div>
@@ -48,7 +48,7 @@
             <p>Ingrese una nueva reserva</p>
         </a>
 
-        <a href="monolitico\views\Historial.php" class="tarjeta">
+        <a href="/Alquiler_vehiculos/monolitico/views/Historial.php" class="tarjeta">
             <div class="icono">
                 <img src="public\recursos\lupa.png" alt="icono de lupa">
             </div>

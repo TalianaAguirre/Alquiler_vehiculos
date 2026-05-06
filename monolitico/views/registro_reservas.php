@@ -40,10 +40,10 @@ $mensaje = $_GET['msg'] ?? null;
 </head>
 <body class="inner-page">
     <div class="app-layout">
-        <?php require __DIR__ . '/includes/menu.php'; ?>
         <main class="content">
             <div class="content-header">
-                <h1 class="content-title">Reservas</h1>
+                <h1 class="content-title">Reservas Activas</h1>
+                <a href="CrearReservas.php" class="btn">+ Nueva Reserva</a>
             </div>
 
             <?php if ($mensaje === 'creada'): ?>
@@ -108,14 +108,18 @@ $mensaje = $_GET['msg'] ?? null;
                             <td><?= $r->get('fecha_inicio') ?></td>
                             <td><?= $r->get('fecha_fin') ?></td>
                             <td class="td-acciones">
-                                <a href="completar_reserva.php?id=<?= $r->get('id') ?>&vehiculo_id=<?= $r->get('vehiculo_id') ?>">
+                                
+                                <a href="completar_reserva.php?id=<?= $r->get('id') ?>&vehiculo_id=<?= $r->get('idVehiculo') ?>">
                                     Registrar devolución
                                 </a>
+
                                 &nbsp;
-                                <a href="cancelar_reserva.php?id=<?= $r->get('id') ?>&vehiculo_id=<?= $r->get('vehiculo_id') ?>"
-                                   onclick="return confirm('¿Cancelar esta reserva?')">
+
+                                <a href="cancelar_reserva.php?id=<?= $r->get('id') ?>&vehiculo_id=<?= $r->get('idVehiculo') ?>"
+                                    onclick="return confirm('¿Cancelar esta reserva?')">
                                     Cancelar
                                 </a>
+                                
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -123,5 +127,7 @@ $mensaje = $_GET['msg'] ?? null;
             </table>
         </main>
     </div>
+     <a href="../index.php" class="btn-volver">Volver al menu</a>
+
 </body>
 </html>

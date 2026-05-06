@@ -26,19 +26,23 @@ class ReservaQuery {
     }
 
     static function getActivas() {
-        $sql = "SELECT * FROM reservas WHERE estado = 'activa'";
+        $sql = "SELECT r.*, c.nombre AS cliente_nombre,
+                    v.marca, v.modelo
+                FROM reservas r
+                JOIN clientes c ON r.cliente_id = c.id
+                JOIN vehiculos v ON r.vehiculo_id = v.id
+                WHERE r.estado = 'activa'";
         $connDb = new Conexion();
         $result = $connDb->execute($sql);
-        $list = [];
+        $list   = [];
         while ($row = $result->fetch_assoc()) {
-            $list[] = new Reserva(
-                $row['id'],
-                $row['cliente_id'],
-                $row['vehiculo_id'],
-                $row['fecha_inicio'],
-                $row['fecha_fin'], 
-                $row['estado']
+            $reserva = new Reserva(
+                $row['id'], $row['cliente_id'], $row['vehiculo_id'],
+                $row['fecha_inicio'], $row['fecha_fin'], $row['estado']
             );
+            $reserva->set('cliente_nombre', $row['cliente_nombre']);
+            $reserva->set('vehiculo_info',  $row['marca'] . ' ' . $row['modelo']);
+            $list[] = $reserva;
         }
         $connDb->close();
         return $list;
@@ -72,11 +76,11 @@ class ReservaQuery {
         $result = $connDb->executeUpdateData($sql, [
             'type' => 'iisss',
             'datos' => [
-                $entity->cliente_id,
-                $entity->vehiculo_id,
-                $entity->fecha_inicio,
-                $entity->fecha_fin,
-                $entity->estado
+                $entity->get('idcliente'),   
+                $entity->get('idVehiculo'),  
+                $entity->get('fecha_inicio'),      
+                $entity->get('fecha_fin'),         
+                $entity->get('estado')
             ]
         ]);
         $connDb->close();
@@ -117,5 +121,37 @@ class ReservaQuery {
         ]);
         $connDb->close();
         return $result->num_rows > 0;
+    }
+
+    static function getHistorial($filtro = null) {
+        $sql = "SELECT r.*, c.nombre AS cliente_nombre,
+                    v.marca, v.modelo
+                FROM reservas r
+                JOIN clientes c ON r.cliente_id = c.id
+                JOIN vehiculos v ON r.vehiculo_id = v.id
+                WHERE r.estado != 'activa'";
+
+        if (!empty($filtro)) {
+            $sql .= " AND (c.nombre LIKE '%$filtro%' 
+                    OR v.marca LIKE '%$filtro%' 
+                    OR v.modelo LIKE '%$filtro%')";
+        }
+
+        $sql .= " ORDER BY r.id DESC";
+
+        $connDb = new Conexion();
+        $result = $connDb->execute($sql);
+        $list   = [];
+        while ($row = $result->fetch_assoc()) {
+            $reserva = new Reserva(
+                $row['id'], $row['cliente_id'], $row['vehiculo_id'],
+                $row['fecha_inicio'], $row['fecha_fin'], $row['estado']
+            );
+            $reserva->set('cliente_nombre', $row['cliente_nombre']);
+            $reserva->set('vehiculo_info',  $row['marca'] . ' ' . $row['modelo']);
+            $list[] = $reserva;
+        }
+        $connDb->close();
+        return $list;
     }
 }
