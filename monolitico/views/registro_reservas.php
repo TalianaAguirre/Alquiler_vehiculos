@@ -43,7 +43,6 @@ $mensaje = $_GET['msg'] ?? null;
         <main class="content">
             <div class="content-header">
                 <h1 class="content-title">Reservas Activas</h1>
-                <a href="CrearReservas.php" class="btn">+ Nueva Reserva</a>
             </div>
 
             <?php if ($mensaje === 'creada'): ?>
