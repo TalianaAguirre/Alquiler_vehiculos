@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Gestor de Alquiler</title>
-    <link rel="stylesheet" href="public/style.css">
+    <link rel="stylesheet" href="public/index.css">
 </head>
 <body>
 
@@ -12,14 +12,14 @@
         
         <h1>Gestor de Alquiler de Vehículos</h1>
     </div>
-    <p class="subtitulo">Administración de disponibilidad y reservas</p>
+    <h4 class="subtitulo">Administración de disponibilidad y reservas</h4>
 </header>
 
 <main class="contenedor">
        
     <div class="bienvenida">
         <h2>Te doy la bienvenida </h2>
-        <p>¿Qué deseas gestionar hoy?</p>
+        <h4>¿Qué deseas gestionar hoy?</h4>
     </div>
 
     <div class="grid-acciones">
@@ -61,7 +61,7 @@
     <div class="contenido-footer">
         <p> 2026 - Gestor de Alquiler de Vehículos</p>
         <p><br>Valeria Sandoval | Salome Aguirre</p>
-        <p> Universidad de Boyaca</p>
+        <p> Universidad de Boyacá</p>
     </div>
 </footer>
 </body>

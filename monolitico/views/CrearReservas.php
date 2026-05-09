@@ -33,15 +33,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Nueva Reserva</title>
-    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="../public/pagina.css">
 </head>
-<body class="inner-page">
+<body>
+    <div class="menu">        
+        <header>
+            <h1>Reservas</h1>
+            <nav>
+                <a href="registro_vehiculos.php">Vehículo</a>
+                <a href="registr_clientes.php">Cliente</a>
+                <a href="Historial.php">Historial</a>
+            </nav>
+        </header>
+    </div>
+
     <div class="app-layout">
         <main class="content">
             <div class="content-header">
                 <h1 class="content-title">Nueva Reserva</h1>
             </div>
-
             <form action="CrearReservas.php" method="POST" class="formulario">
                 <label>Vehículo disponible
                     <select name="vehiculo_id" required>
@@ -63,19 +73,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <?php endforeach; ?>
                     </select>
                 </label>
-                <label>Fecha de inicio
-                    <input type="date" name="fecha_inicio" required>
-                </label>
-                <label>Fecha de fin
-                    <input type="date" name="fecha_fin" required>
-                </label>
+                <label>Fecha de inicio <input type="date" name="fecha_inicio" required></label>
+                <label>Fecha de fin <input type="date" name="fecha_fin" required></label>
                 <div class="form-actions">
                     <button type="submit" class="btn">Crear reserva</button>
-                    <a href="registro_reservas.php" class="btn-cancelar">Cancelar</a>
+                    <a href="registro_reservas.php" class="btn-volver">Cancelar</a>
                 </div>
             </form>
         </main>
     </div>
-    <a href="/Alquiler_vehiculos/index.php" class="btn-volver">Volver al menú</a>
+
+    <footer class="footer">
+        <div class="contenido-footer">
+            <p>Nueva Reserva</p>
+            <p><br>2026 - Gestor de Alquiler de Vehículos</p>
+        </div>
+    </footer>
 </body>
 </html>

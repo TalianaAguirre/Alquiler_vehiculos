@@ -19,36 +19,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Registrar Cliente</title>
-    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="../public/pagina.css">
 </head>
-<body class="inner-page">
+<body>
+    <div class="menu">        
+        <header>
+            <h1>Clientes</h1>
+            <nav>
+                <a href="registro_vehiculos.php">Vehículo</a>
+                <a href="registro_reservas.php">Reserva</a>
+                <a href="Historial.php">Historial</a>
+            </nav>
+        </header>
+    </div>
+
     <div class="app-layout">
         <main class="content">
             <div class="content-header">
                 <h1 class="content-title">Registrar Cliente</h1>
             </div>
-
             <form action="CrearClientes.php" method="POST" class="formulario">
-                <label>Nombre
-                    <input type="text" name="nombre" required>
-                </label>
-                <label>Teléfono
-                    <input type="text" name="telefono">
-                </label>
-                <label>Correo
-                    <input type="email" name="correo">
-                </label>
-                <label>Número de licencia
-                    <input type="text" name="numero_licencia">
-                </label>
+                <label>Nombre <input type="text" name="nombre" required></label>
+                <label>Teléfono <input type="text" name="telefono"></label>
+                <label>Correo <input type="email" name="correo"></label>
+                <label>Número de licencia <input type="text" name="numero_licencia"></label>
                 <div class="form-actions">
                     <button type="submit" class="btn">Registrar</button>
-                    <a href="registr_clientes.php" class="btn-cancelar">Cancelar</a>
+                    <a href="registr_clientes.php" class="btn-volver">Cancelar</a>
                 </div>
             </form>
         </main>
     </div>
-     <a href="../index.php" class="btn-volver">Volver al menu</a>
 
+    <footer class="footer">
+        <div class="contenido-footer">
+            <p>Registrar Cliente</p>
+            <p><br>2026 - Gestor de Alquiler de Vehículos</p>
+        </div>
+    </footer>
 </body>
 </html>

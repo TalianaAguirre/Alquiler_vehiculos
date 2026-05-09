@@ -20,9 +20,24 @@ $historial  = $controller->getHistorial($filtro);
 <head>
     <meta charset="UTF-8">
     <title>Historial</title>
-    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="../public/pagina.css">
 </head>
 <body class="inner-page">
+       <div class="menu">        
+         <header>
+           
+            <div >
+            <h1>Historial</h1>
+            </div>    
+           
+
+             <nav>
+                <a href="registro_vehiculos.php">Vehículo</a>
+                <a href="registr_clientes.php">Cliente</a>
+                <a href="registro_reservas.php">Reserva</a>
+             </nav>
+        </header>
+    </div>
     <div class="app-layout">
         <main class="content">
             <div class="content-header">
@@ -40,7 +55,7 @@ $historial  = $controller->getHistorial($filtro);
                 <div class="form-actions">
                     <button type="submit" class="btn">Buscar</button>
                     <?php if ($filtro): ?>
-                        <a href="Historial.php" class="btn-cancelar">Limpiar</a>
+                        <a href="Historial.php" class="btn">Limpiar</a>
                     <?php endif; ?>
                 </div>
             </form>
@@ -77,8 +92,14 @@ $historial  = $controller->getHistorial($filtro);
                     <?php endif; ?>
                 </tbody>
             </table>
+                <a href="../index.php" class="btn-volver">Volver al menú</a>
         </main>
     </div>
-    <a href="../index.php" class="btn-volver">Volver al menú</a>
+    <footer class="footer">
+    <div class="contenido-footer">
+        <p>Página de Historial </p>
+        <p><br>2026 - Gestor de Alquiler de Vehículos</p>
+    </div>
+</footer>
 </body>
 </html>

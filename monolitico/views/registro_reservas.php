@@ -36,9 +36,22 @@ $mensaje = $_GET['msg'] ?? null;
 <head>
     <meta charset="UTF-8">
     <title>Reservas</title>
-    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="../public/pagina.css">
 </head>
 <body class="inner-page">
+       <div class="menu">        
+         <header>
+            <div >
+            <h1>Reservas</h1>
+            </div>    
+             <nav>
+                <a href="registro_vehiculos.php">Vehículo</a>
+                <a href="registr_clientes.php">Cliente</a>
+                <a href="Historial.php">Historial</a>
+             </nav>
+        </header>
+    </div>
+
     <div class="app-layout">
         <main class="content">
             <div class="content-header">
@@ -125,9 +138,15 @@ $mensaje = $_GET['msg'] ?? null;
                     <?php endforeach; ?>
                 </tbody>
             </table>
+                 <a href="../index.php" class="btn-volver">Volver al menu</a>
+
         </main>
     </div>
-     <a href="../index.php" class="btn-volver">Volver al menu</a>
-
+    <footer class="footer">
+    <div class="contenido-footer">
+       <p>Página de Reservaciones </p>
+        <p><br>2026 - Gestor de Alquiler de Vehículos</p>
+    </div>
+</footer>
 </body>
 </html>
